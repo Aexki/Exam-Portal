@@ -1,0 +1,66 @@
+body {
+    background: white;
+    margin: 0;
+    padding: 0;
+}
+
+.signup-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    margin-top: 30px;
+    border: 2px solid black;
+    padding: 20px 0 0 0;
+}
+
+.signup-form input {
+    margin: 8px 0;
+    border-bottom: 1px solid black;
+    background: transparent;
+    padding: 2px 5px;
+}
+
+.direct {
+    width: 250px;
+    margin: 10px 0;
+}
+
+.signup-form textarea {
+    margin: 10px 0;
+    border: 1px solid black;
+    background: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.form-box {
+    padding: 0;
+    margin-left: -75px;
+}
+
+.fileinput {
+    border: none!important;
+}
+
+.butt {
+    border: 2px solid black!important;
+    padding: 5px;
+}
+
+.butt:hover {
+    background: black;
+    color: white;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Exam Portal: Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../One/css/style.css">
+    <link rel="stylesheet" href="../One/css/main.css">
+    <link rel="stylesheet" href="../One/css/stylenew.css">
+    <script src="../One/script/script.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+        <label for="check" class="checkbtnclose"><i class="fas fa-times"></i></label>
+        <label class="logo">e-Exam: Register</label>
+        <ul>
+            <li><i class="fas fa-search icon"></i><input class="search-box" type="text" placeholder="Search... "
+                    onfocus="placeholder=''" onblur="placeholder='Search...'"></li>
+            <li><a href="../one/templates/index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="../One/templates/login.php"><i class="far fa-address-book"></i> Login</a></li>
+            <li style="border-left: 3px solid white; height: 20px;" id="line1"></li>
+            <li>
+                <a href="#!"
+                    onclick="$('#check').prop('checked', false);alert('Created and Developed by : Aman Jena\nThanks for visiting this page..')"><i
+                        class="fas fa-project-diagram"></i> About Developer</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="signup-form">
+        <center>
+            <h2>Sign up</h2>
+        </center>
+        <form action="../process.php" class="form-box" method="POST" enctype="multipart/form-data">
+            <pre>
+                Name      : <input type="text" id="v1" name="name" autocomplete="off" maxlength="25" readonly onfocus="this.removeAttribute('readonly');" class="direct" required>
+                ID        : <input type="text" id="v2" name="id" autocomplete="off"  class="direct" required>
+                Password  : <input type="password" id="v3" name="password" autocomplete="off" class="direct" required>
+                Email     : <input type="email" id="v4" name="email" autocomplete="off" class="direct" required>
+                Age       : <input type="number" id="v5" name="age" autocomplete="off" class="direct" min="18" max="23" required>
+                Gender    : <input type="radio" name="gender" value="Male" checked> Male <input type="radio" name="gender" value="Female"> Female <input type="radio" name="gender" value="Others"> Others
+                College Address :
+                <textarea name="collegeaddress" id="v6" id="collegeaddress" cols="41" rows="3" spellcheck="False" required></textarea>
+                Branch    : <select name="branch" id="branch" required>
+                    <option value="" disabled selected></option>
+                    <option value="CSE">CSE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EIE">EIE</option>
+                </select>
+                Technical Skills : <input type="checkbox" name="techskill[]" value="Python"> Python <input type="checkbox" name="techskill[]" value="C"> C <input type="checkbox" name="techskill[]" value="Java"> Java <input type="checkbox" name="techskill[]" name="JSP"> JSP
+                Resume(upload): <input type="file" class="fileinput" id="v7" name="resume">
+                <input type="submit" name="save" value="Submit" class='butt' onclick="check()">  <input type="reset" value="Reset" class="butt">
+            </pre>
+        </form>
+    </div>
+
+    <div class="footer">
+        <ul style="list-style-type: none; display:inline">
+            <li style="display: inline;" class="option">PRIVACY POLICY</li>
+            <li style="display: inline;" class="option">COPYRIGHT POLICY</li>
+            <li style="display: inline;" class="option">DISCLAIMER</li>
+            <li style="display: inline;" class="option">ABOUT US</li>
+            <li style="display: inline;" class="option">CONTACT</li>
+            <li style="float:right" class="mymark">&#169; Aexki Creation. All Rights Reserved. | 2001 - 2021</li>
+        </ul>
+    </div>
+</body>
+
+</html>

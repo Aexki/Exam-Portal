@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Exam Portal: My Wall</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
+        <label for="check" class="checkbtnclose"><i class="fas fa-times"></i></label>
+        <label class="logo">My Wall</label>
+        <ul>
+            <li><i class="fas fa-search icon"></i><input class="search-box" type="text" placeholder="Search... " onfocus="placeholder=''" onblur="placeholder='Search...'"></li>
+            <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="login.html"><i class="far fa-address-book"></i> Login</a></li>
+            <li style="border-left: 3px solid white; height: 20px;" id="line1"></li>
+            <li>
+                <a href="#!" onclick="$('#check').prop('checked', false);alert('Created and Developed by : Aman Jena\nThanks for visiting this page..')"><i class="fas fa-project-diagram"></i> About Developer</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container mywall">
+        <div class="row">
+            <div class="col-md-5">
+                <center>
+                    <img src="../images/50047387.jpg" alt="aexki" id="mywallimage"><br><br>
+                    <h3>Aman Jena</h3>
+                    <a href="#!" style="text-decoration: none; font-size: 15px" class="edit">Change</a>
+                </center>
+                <ul>
+                    <pre>
+                    <li><b>College Address : </b></li>
+                    <li><textarea name="collegeaddress" cols="45" rows="3" style="position: relative; margin-top:-35px;" disabled>Silicon Insititute of Technology, Bhubaneswar, Odisha.</textarea></li>
+                    <li><b>Github</b>   <b>:</b> <input type="text" placeholder="https://github.com/Aexki" disabled><span class="edit"> Edit</span></li>
+                </pre>
+                </ul>
+            </div>
+            <div class="col-md-7">
+                <div class="details">
+                    <ul>
+                        <pre>
+                        <li><b>Name</b>        <b>:</b> <input type="text" placeholder="Aman Jena" disabled><span class="edit">Change</span></li>
+                        <li><b>Username</b>    <b>:</b> <input type="text" placeholder="aexki_" disabled><span class="edit"> Edit</span></li>
+                        <li><b>Email</b>       <b>:</b> <input type="email" placeholder="aexkicreation@gmail.com" disabled><span class="edit"> Edit</span></li>
+                        <li><b>Phone</b>       <b>:</b> <input type="number" placeholder="9090718208" disabled><span class="edit"> Edit</span></li>
+                        <li><b>Age</b>         <b>:</b> <input type="number" placeholder="20" disabled><span class="edit"> Edit</span></li>
+                        <li><b>Gender</b>      <b>:</b> <input type="text" placeholder="Male" disabled><span class="edit"> Edit</span></li>
+                        <li><b>Branch</b>      <b>:</b> <input type="text" placeholder="CSE" disabled><span class="edit"> Edit</span></li>
+                        <li><b>Tech. Skill </b><b>:</b> <input type="number" placeholder="Python, Java, C" disabled><span class="edit">Change</span></li>
+                        </pre>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <ul style="list-style-type: none; display:inline">
+            <li style="display: inline;" class="option">PRIVACY POLICY</li>
+            <li style="display: inline;" class="option">COPYRIGHT POLICY</li>
+            <li style="display: inline;" class="option">DISCLAIMER</li>
+            <li style="display: inline;" class="option">ABOUT US</li>
+            <li style="display: inline;" class="option">CONTACT</li>
+            <li style="float:right" class="mymark">&#169; Aexki Creation. All Rights Reserved. | 2001 - 2021</li>
+        </ul>
+    </div>
+</body>
+
+</html>

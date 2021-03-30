@@ -1,0 +1,352 @@
+body {
+    outline: none;
+    text-decoration: none!important;
+    min-height: 100vh;
+}
+
+a {
+    font-family: Poppins-Regular;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0px;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+}
+
+a:focus {
+    outline: none !important;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bg {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+}
+
+nav {
+    background: #000000;
+    height: 95px;
+    width: 100%;
+}
+
+.navbar {
+    top: 0;
+    z-index: 5;
+    border-bottom: 1px solid white;
+}
+
+label.logo {
+    color: rgb(205, 235, 150);
+    font-size: 45px;
+    line-height: 60px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+    z-index: 2;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    transition: 1s;
+}
+
+nav ul li a {
+    position: relative;
+    color: white;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    bottom: 0;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid rgb(205, 235, 150);
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    right: 0
+}
+
+nav a.active {
+    transition: 0.2s;
+    color: rgb(205, 235, 150);
+    text-decoration: none;
+    border-radius: 0;
+}
+
+nav a:hover {
+    transition: 0.2s;
+    color: rgb(205, 235, 150);
+    text-decoration: none;
+    border-radius: 0;
+    bottom: 5px;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    line-height: 20px;
+    margin-top: 0px;
+    cursor: pointer;
+    margin-left: 20px;
+    display: none;
+    transition: .5s;
+}
+
+.checkbtnclose {
+    font-size: 30px;
+    color: white;
+    line-height: 20px;
+    margin-top: 0px;
+    cursor: pointer;
+    margin-left: 20px;
+    display: none;
+    transition: .5s;
+}
+
+#check {
+    display: none;
+}
+
+.detail {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.search-box {
+    border: solid 2px white;
+    width: 300px;
+    height: 60px;
+    padding: 0 50px;
+    font-size: 20px;
+    border-radius: 50px;
+    outline: none;
+    background: transparent;
+    color: white;
+}
+
+.search-box:focus {
+    border: solid 2px rgb(205, 235, 150);
+}
+
+.search-box::placeholder {
+    color: white;
+}
+
+.icon {
+    position: relative;
+    right: -40px;
+    color: white;
+}
+
+.card {
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 30px 0 0 0;
+    transition: .5s;
+    overflow: hidden;
+}
+
+.card .card-title {
+    color: rgb(24, 24, 94);
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card:hover .card-title {
+    color: rgb(255, 168, 6);
+    text-decoration: none;
+}
+
+.card button {
+    position: relative;
+    top: 10px;
+    width: 100px;
+    border-radius: 50px;
+    outline: none;
+}
+
+.navbar-brand {
+    color: white!important;
+}
+
+img {
+    width: 170px;
+    height: 170px;
+    border-right: 2px solid black;
+}
+
+.mywall {
+    margin-top: 50px;
+}
+
+#mywallimage {
+    border: 2px solid black;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.mywall textarea {
+    border: none;
+    background: white;
+    color: black;
+}
+
+.mywall input {
+    width: 200px;
+    border: none;
+}
+
+.mywall input::placeholder {
+    color: black;
+}
+
+.details ul {
+    list-style-type: none;
+    cursor: normal;
+}
+
+.details input {
+    width: 230px;
+    border: none;
+    background: transparent;
+}
+
+.details input::placeholder {
+    color: black;
+}
+
+.edit {
+    font-size: 12px;
+    color: blue;
+    cursor: pointer;
+}
+
+.widgets {
+    position: relative;
+    margin-top: 100px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    border-top: 1px solid white;
+    background: black;
+}
+
+.footer ul {
+    position: relative;
+    color: white;
+    top: 20px;
+}
+
+.mymark {
+    margin-right: 50px;
+}
+
+.option {
+    font-size: 13px;
+    margin: 0 20px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.option:hover {
+    color: rgb(205, 235, 150);
+}
+
+@media(max-width: 952px) {
+    label.logo {
+        font-size: 35px;
+        padding-left: 50px;
+    }
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px) {
+    .line {
+        border: none;
+        margin-top: 60px;
+    }
+    .box {
+        height: auto;
+    }
+    #submitbutton {
+        margin-bottom: 40px;
+    }
+    .line h1 {
+        font-size: 50px;
+    }
+    .line h3 {
+        max-width: 100%;
+    }
+    .titlelogo {
+        top: 30%;
+    }
+    #line1 {
+        display: none;
+    }
+    .checkbtn {
+        display: inline-block;
+    }
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 35vh;
+        background: #15273a;
+        top: 102px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li {
+        display: block;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    a:hover, a.active {
+        background: none;
+        color: #0082e6;
+    }
+    #check:checked~ul {
+        left: 0;
+    }
+    #check:checked~.checkbtn {
+        display: none;
+    }
+    #check:checked~.checkbtnclose {
+        display: inline;
+    }
+}
