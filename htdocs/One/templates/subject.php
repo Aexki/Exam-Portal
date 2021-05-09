@@ -1,5 +1,14 @@
 <?php
     session_start();
+    if(!$_SESSION['user']){
+        if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
+            $uri = 'https://';
+        } else {
+            $uri = 'http://';
+        }
+        $uri .= $_SERVER['HTTP_HOST'];
+        header('Location: '.$uri.'/one/templates/login.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +24,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="../css/style.css">
+    <script src="../script/script.js"></script>
 </head>
 
 <body>
@@ -22,17 +32,21 @@
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn"><i class="fas fa-bars"></i></label>
         <label for="check" class="checkbtnclose"><i class="fas fa-times"></i></label>
-        <label class="logo">e-Exam</label>
+        <label class="logo">e-Exam - Subjects</label>
         <ul>
             <li><i class="fas fa-search icon"></i><input class="search-box" type="text" placeholder="Search... "
                     onfocus="placeholder=''" onblur="placeholder='Search...'"></li>
-            <li><a href="index.html" class="active"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="login.html"><i class="far fa-address-book"></i> Login</a></li>
+            <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
             <li style="border-left: 3px solid white; height: 20px;" id="line1"></li>
-            <li>
-                <a href="#!"
-                    onclick="$('#check').prop('checked', false);alert('Created and Developed by : Aman Jena\nThanks for visiting this page..')"><i
-                        class="fas fa-project-diagram"></i> About Developer</a>
+            <li class="dropdown">
+                <a href="#!" class="dropbtn"
+                    ><i class="fas fa-user" style="color: white"></i>
+                    <?php echo ' '.$_SESSION['user']; ?>
+                </a>
+                <div class="dropdown-content">
+                    <a href="#" onclick="logout()">Logout</a>
+                    <a href="#!" onclick="$('#check').prop('checked', false);alert('Created and Developed by : Aman Jena\nThanks for visiting this page..')">About Developer</a>
+                </div>
             </li>
         </ul>
     </nav>
@@ -40,11 +54,13 @@
     <div class="container detail">
         <fieldset>
         <legend>My Exams</legend>
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered table-hover" style="text-align: center;">
             <thead class="thead-dark">
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">EXAM</th>
+                <th scope="col">MARK</th>
+                <th scope="col">DURATION</th>
                 <th scope="col">DATE</th>
                 <th scope="col"></th>
                 </tr>
@@ -61,8 +77,10 @@
                         echo '<tr>';
                         echo '<th scope="row">'.$row['#'].'</th>';
                         echo '<td>'.$row['exam'].'</td>';
+                        echo '<td>'.$row['mark'].'</td>';
+                        echo '<td>'.$row['duration'].'</td>';
                         echo '<td>'.$row['time_date'].'</td>';
-                        echo '<td><button id ="'.$row['exam'].'" value="'.$row['value'].'" class="btn btn-primary" onclick="data(this.value,this.id)">Appear</button></td>';
+                        echo '<td><button id ="'.$row['exam'].'"name="'.$row['duration'].'" value="'.$row['value'].'" class="btn btn-primary" onclick="data(this.value,this.id,this.name)">Appear</button></td>';
                         echo '</tr>';
                     }
                 }
@@ -84,11 +102,18 @@
     </div>
 
     <script>
-        function data(subject, title) {
+        function data(subject, title, duration) {
+            var giv = new Date();
+            var a = duration.split(':');
+            var seconds = (+a[0]) * 60 * 60 + (+a[1]) * 60 + (+a[2]);
+
+            var examtime = seconds;
+
+            var data = (giv.getTime() / 1000) + examtime;
             $.ajax({
                 url: "set_session.php",
                 method: "POST",
-                data: { title : title, subject : subject },
+                data: { title : title, subject : subject, time : data },
                 cache: false,
                 success: function (response) {
                     window.open('exampage.php')

@@ -1,0 +1,145 @@
+body {
+    padding-right: 0 !important
+}
+
+.exam {
+    position: relative;
+}
+
+.question {
+    padding: 50px 20px 0 20px;
+    border-right: 2px solid black;
+    height: calc(100vh - 100px);
+}
+
+.question h5 {
+    padding: 0 0 0 70px;
+    user-select: none;
+    height: 100px;
+}
+
+.question h4 {
+    padding: 0 0 0 70px;
+    user-select: none;
+    color: #f30035;
+}
+
+.options {
+    margin: 0px 0 0 100px;
+}
+
+#option {
+    position: relative;
+    top: 40px;
+}
+
+.options input {
+    display: none;
+}
+
+.box {
+    display: block;
+    width: 400px;
+    height: auto;
+    padding: 20px;
+    border: 2px solid black;
+    user-select: none;
+    transition: .5s;
+}
+
+.box label {
+    display: inline-block;
+}
+
+.box:hover {
+    cursor: pointer;
+    background-color: rgb(224, 241, 192);
+}
+
+.options input[type="radio"]:checked+label {
+    background-color: rgb(205, 235, 150);
+}
+
+.circle {
+    display: inline-block;
+    border: 2px solid black;
+    padding: 0 5px;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+}
+
+.buttons {
+    position: relative;
+    top: 100px;
+    left: 80px;
+    transition: .5s ease-in-out;
+}
+
+.buttons input[type="button"]:hover {
+    color: black;
+}
+
+.changequestion {
+    position: relative;
+    top: 50px;
+}
+
+.changequesbutton {
+    position: relative;
+    top: 30px;
+}
+
+.butt {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    background-color: white;
+}
+
+.butt:hover {
+    background-color: aliceblue;
+}
+
+#final {
+    position: relative;
+    top: 394px;
+    width: 300px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: none;
+    transition: .3s;
+    border-radius: 3px;
+}
+
+#final:hover {
+    font-size: 18px;
+}
+
+.but {
+    width: 200px;
+    height: 50px;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.san {
+    float: right;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(1, 113, 250);
+    color: white;
+    margin-right: 125px;
+    border: none;
+    border-radius: 3px;
+}
+
+label.logo {
+    line-height: 80px;
+    position: relative;
+    top: -20px
+}

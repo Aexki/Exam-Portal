@@ -5,26 +5,173 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(35, 4, 83);
+}
+
+nav {
+    background: #000000;
+    height: 95px;
+    width: 100%;
+}
+
+.navbar {
+    top: 0;
+    z-index: 5;
+    border-bottom: 1px solid white;
+}
+
+label.logo {
+    color: rgb(205, 235, 150);
+    font-size: 45px;
+    line-height: 60px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+    z-index: 2;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    transition: 1s;
+}
+
+nav ul li a {
+    position: relative;
+    color: white;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    bottom: 0;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid rgb(205, 235, 150);
+    bottom: 0;
+    left: 0;
+    right: 100%;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after {
+    right: 0
+}
+
+nav a.active {
+    transition: 0.2s;
+    color: rgb(205, 235, 150);
+    text-decoration: none;
+    border-radius: 0;
+}
+
+nav a:hover {
+    transition: 0.2s;
+    color: rgb(205, 235, 150);
+    text-decoration: none;
+    border-radius: 0;
+    bottom: 5px;
+}
+
+.checkbtn {
+    font-size: 30px;
+    color: white;
+    line-height: 20px;
+    margin-top: 0px;
+    cursor: pointer;
+    margin-left: 20px;
+    display: none;
+    transition: .5s;
+}
+
+.checkbtnclose {
+    font-size: 30px;
+    color: white;
+    line-height: 20px;
+    margin-top: 0px;
+    cursor: pointer;
+    margin-left: 20px;
+    display: none;
+    transition: .5s;
+}
+
+#check {
+    display: none;
+}
+
+.detail {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.search-box {
+    border: solid 2px white;
+    width: 300px;
+    height: 60px;
+    padding: 0 50px;
+    font-size: 20px;
+    border-radius: 50px;
+    outline: none;
+    background: transparent;
+    color: white;
+}
+
+.search-box:focus {
+    border: solid 2px rgb(205, 235, 150);
+}
+
+.search-box::placeholder {
+    color: white;
+}
+
+.icon {
+    position: relative;
+    right: -40px;
+    color: white;
+}
+
+#stud {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 400px;
 }
 
 .container {
     position: absolute;
+    top: 52%;
     left: 50%;
-    transform: translateX(-50%);
-    padding: 16px;
-    width: 400px;
+    transform: translateX(-50%) translateY(-50%);
+    border: 2px solid black;
+    border-radius: 0 0 50px 50px;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container form {
-    border: 3px solid #f1f1f1;
     text-align: center;
+    width: 400px;
+}
+
+.container h2 {
+    color: Red;
 }
 
 .container input[type=text], input[type=password] {
     width: 90%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 3px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -46,7 +193,7 @@ button:hover {
 
 .imgcontainer {
     text-align: center;
-    margin: 50px 0 25px 0;
+    margin: 20px 0 25px 0;
 }
 
 img.user {
@@ -55,18 +202,6 @@ img.user {
 }
 
 .psw {
-    margin-top: 30px;
+    margin-top: 0px;
     padding: 20px 30px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-
-@media screen and (max-width: 300px) {
-    span.psw {
-        display: block;
-        float: none;
-    }
-    .cancelbtn {
-        width: 100%;
-    }
 }

@@ -32,7 +32,8 @@ if(isset($_POST['save']))
             $uri = 'http://';
         }
         $uri .= $_SERVER['HTTP_HOST'];
-        header('Location: '.$uri.'/one/templates/login.html');
+        header('Location: '.$uri.'/one/templates/login.php');
+        // header('Location: '.$uri.'/IWT-NOT-MINE/login.html');
         echo '<script type="text/javascript">';
         echo 'alert("User Created Successfully! Login to continue")';
         echo '</script>';
@@ -45,31 +46,22 @@ if(isset($_POST['save']))
 }
 
 if(isset($_POST['login'])){
+    // $name = $_POST['username'];
     $name = $_POST['username'];
     $password = $_POST['password'];
 
     $sql = "SELECT * FROM `student` where name='$name' and password='$password'";
     $results = mysqli_query($conn, $sql);
     if (mysqli_num_rows($results) == 1) {
+        $row=$results->fetch_array();
+        $_SESSION['user']=$row[0];
         echo "<script type='text/javascript'>
-            var left = (screen.width/2)-100;
-            var tops = (screen.height/2)-50;
-            var w = window.open('', '', 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=200, height=100, top='+tops+', left='+left);
-            w.document.write('Login Successful');
-            w.focus();
+            alert('Login Successful');
             setTimeout(function() {
-                w.close();
-                window.open('/one/templates/index.html','_self');
+                window.open('/one/templates/index.php','_self');
+                // window.open('/IWT-NOT-MINE/e-exam.html','_self');
             }, 1000);
         </script>";
-
-        // if (!empty($_SERVER['HTTPS']) && ('on' == $_SERVER['HTTPS'])) {
-        //     $uri = 'https://';
-        // } else {
-        //     $uri = 'http://';
-        // }
-        // $uri .= $_SERVER['HTTP_HOST'];
-        // header('Location: '.$uri.'/one/templates/login.html');
     }
     else{
         $message = "Login Unsuccessful. Try again..";
@@ -109,5 +101,4 @@ if(isset($_POST['answer']))
     $uri .= $_SERVER['HTTP_HOST'];
     header('Location: '.$uri.'/one/templates/result.php');
 }
-
 ?>
